@@ -23,7 +23,7 @@ const Button = ({ handleClick, type = "submit", label = "Submit" }) => (
 export default Button;
 
 Button.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func,
   type: PropTypes.string,
   label: PropTypes.string,
 };
