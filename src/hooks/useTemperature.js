@@ -22,7 +22,7 @@ const useTemperature = (city) => {
     )
       .then((res) => res.json())
       .then(({ main: { temp } }) => setTemp(temp));
-  }, []);
+  }, [city]);
 
   return [isLoading, temp];
 };
