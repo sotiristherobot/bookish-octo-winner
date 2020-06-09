@@ -24,6 +24,7 @@ const Input = ({
   return (
     <StyledInput
       type={type}
+      aria-label="salary-input"
       placeholder={placeholder}
       value={value}
       onChange={handleInputChange}
