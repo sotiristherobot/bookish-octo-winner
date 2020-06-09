@@ -23,6 +23,7 @@ const Tab = ({ id, title, isActive, setActiveTab }) => {
     <StyledHeader
       className={isActive ? "active" : null}
       id={id}
+      tabIndex={id}
       onClick={handleClick}
     >
       {title}
