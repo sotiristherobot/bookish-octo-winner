@@ -24,7 +24,12 @@ const Button = ({
   label = "Submit",
   disabled = false,
 }) => (
-  <StyledButton type={type} onClick={handleClick} disabled={disabled}>
+  <StyledButton
+    role="submit"
+    type={type}
+    onClick={handleClick}
+    disabled={disabled}
+  >
     {label}
   </StyledButton>
 );
