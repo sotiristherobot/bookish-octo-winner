@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
@@ -16,7 +17,7 @@ const StyledHeader = styled.div`
  * @param {function} setActiveTab
  * @returns {*}
  */
-export default ({ id, title, isActive, setActiveTab }) => {
+const Tab = ({ id, title, isActive, setActiveTab }) => {
   const handleClick = ({ target: { id } }) => setActiveTab(parseInt(id));
   return (
     <StyledHeader
@@ -27,4 +28,11 @@ export default ({ id, title, isActive, setActiveTab }) => {
       {title}
     </StyledHeader>
   );
+};
+export default Tab;
+Tab.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  setActiveTab: PropTypes.func.isRequired,
 };
