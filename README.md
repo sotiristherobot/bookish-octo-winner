@@ -6,6 +6,9 @@ value will be there). Once you click submit in either tab, there is no way to go
 disabled and a prompt to wait for the other part will appear to the user. (The input for that specific tab will dissapear).
 When both tabs are submitted the appropriate message will appear to the user.
 
+There are extra comments that normally wouldn't be added to make it easier to understand the logic. There is 
+also a custom implementation of tabs.
+
 Below are the steps as described by the react scripts to run the scripts for the project. 
 ## Available Scripts
 
