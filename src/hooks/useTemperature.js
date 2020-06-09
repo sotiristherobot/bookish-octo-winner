@@ -21,6 +21,8 @@ const useTemperature = (city) => {
 
   React.useEffect(() => {
     setIsloading(true);
+    // the app id should be stored in an .env file but I have put it here to
+    // make use easier.
     fetch(`${API}?q=${city}&appid=23a5a3bad50e85f575448196aaf5af0a`, {
       method: "GET",
     })
