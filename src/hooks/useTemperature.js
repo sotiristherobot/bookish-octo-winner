@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { API } from "../api/constants";
 
 /**
  * Reusable hook that returns the current temperature for the provided city
@@ -20,14 +21,12 @@ const useTemperature = (city) => {
 
   React.useEffect(() => {
     setIsloading(true);
-    fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=23a5a3bad50e85f575448196aaf5af0a`,
-      {
-        method: "GET",
-      }
-    )
+    fetch(`${API}?q=${city}&appid=23a5a3bad50e85f575448196aaf5af0a`, {
+      method: "GET",
+    })
       .then((res) => res.json())
-      .then(({ main: { temp } }) => setTemp(toCelcius(temp)));
+      .then(({ main: { temp } }) => setTemp(toCelcius(temp)))
+      .catch((err) => console.error(err));
   }, [city]);
 
   return [isLoading, temp];
