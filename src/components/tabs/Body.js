@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledForm = styled.form`
@@ -21,3 +22,8 @@ const Body = ({ handleSubmit, render }) => {
   return <StyledForm onSubmit={handleSubmit}>{render()}</StyledForm>;
 };
 export default Body;
+
+Body.propTypes = {
+  handleSubmit: PropTypes.func.isRequired,
+  render: PropTypes.func.isRequired,
+};
