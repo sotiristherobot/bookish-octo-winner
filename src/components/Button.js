@@ -16,9 +16,15 @@ const StyledButton = styled.button`
  * @param {function} handleClick Click handler for the button
  * @param {string} type Type of the button, by default is set to submit
  * @param {string} label What should be used as a label for the button by default is set to Submit
+ * @param {disabled} disabled Signal if the button should be disabled
  */
-const Button = ({ handleClick, type = "submit", label = "Submit" }) => (
-  <StyledButton type={type} onClick={handleClick}>
+const Button = ({
+  handleClick,
+  type = "submit",
+  label = "Submit",
+  disabled = false,
+}) => (
+  <StyledButton type={type} onClick={handleClick} disabled={disabled}>
     {label}
   </StyledButton>
 );
@@ -28,4 +34,5 @@ Button.propTypes = {
   handleClick: PropTypes.func,
   type: PropTypes.string,
   label: PropTypes.string,
+  disabled: PropTypes.bool,
 };
