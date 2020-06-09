@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
@@ -30,6 +30,7 @@ const Tab = ({ id, title, isActive, setActiveTab }) => {
   );
 };
 export default Tab;
+
 Tab.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
