@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Tabs from "../../components/tabs/Tabs";
-import TabList from "../../components/tabs/TabList";
 
 const StyledMain = styled.div`
   display: flex;
