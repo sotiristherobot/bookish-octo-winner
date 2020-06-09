@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Tabs from "../../components/tabs/Tabs";
+import TabsContainer from "../../components/tabs/TabsContainer";
 
 const StyledMain = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ const StyledMain = styled.div`
 const Main = () => {
   return (
     <StyledMain>
-      <Tabs>
+      <TabsContainer>
         {[
           {
             id: 0,
@@ -28,7 +28,7 @@ const Main = () => {
             buttonText: "submit",
           },
         ]}
-      </Tabs>
+      </TabsContainer>
     </StyledMain>
   );
 };

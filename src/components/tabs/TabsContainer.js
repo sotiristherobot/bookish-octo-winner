@@ -22,7 +22,7 @@ const StyledTabs = styled.div`
  * @param {Array} children
  * @constructor
  */
-const Tabs = ({ children }) => {
+const TabsContainer = ({ children }) => {
   const [activeTab, setActiveTab] = React.useState(children[0].id || 0);
   const [inputsValue, setInputsValue] = React.useState({
     0: "",
@@ -117,7 +117,7 @@ const Tabs = ({ children }) => {
     </StyledTabs>
   );
 };
-export default Tabs;
-Tabs.propTypes = {
+export default TabsContainer;
+TabsContainer.propTypes = {
   children: PropTypes.instanceOf(Array).isRequired,
 };

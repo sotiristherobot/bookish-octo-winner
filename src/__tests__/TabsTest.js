@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Tabs from "../components/tabs/Tabs";
+import TabsContainer from "../components/tabs/TabsContainer";
 
 /*
   By all means this is not an exhaustive list of tests. I'm only testing the basic functionality of
@@ -8,7 +8,7 @@ import Tabs from "../components/tabs/Tabs";
  */
 const setup = () => {
   const { container, debug } = render(
-    <Tabs>
+    <TabsContainer>
       {[
         {
           id: 0,
@@ -23,7 +23,7 @@ const setup = () => {
           buttonText: "submit",
         },
       ]}
-    </Tabs>
+    </TabsContainer>
   );
   return { container, debug };
 };
