@@ -109,7 +109,7 @@ const Tabs = ({ children }) => {
                   value={inputsValue[activeTab]}
                 />
               )}
-              <Button disabled={submittedValues[activeTab]} />
+              <Button disabled={Boolean(submittedValues[activeTab])} />
             </>
           );
         }}
