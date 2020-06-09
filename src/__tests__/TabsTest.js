@@ -48,7 +48,7 @@ test("Should render the correct placeholders for inputs", () => {
   expect(screen.getByPlaceholderText("Enter maximum offer")).toBeTruthy();
 });
 test("The correct input should dissapear when a value is submitted", () => {
-  const { debug } = setup();
+  setup();
   fireEvent.change(screen.getByLabelText("salary-input"), {
     target: { value: 12356 },
   });
