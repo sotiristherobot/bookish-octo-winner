@@ -19,6 +19,8 @@ const StyledTabs = styled.div`
 
 /**
  * Gets as input a configuration object and renders the tabs along with their body
+ * Contains all the logic for which tab should be activated and what panel(body) should be
+ * rendered for each case
  * @param {Array} children
  * @constructor
  */
