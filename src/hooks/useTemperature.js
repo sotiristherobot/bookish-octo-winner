@@ -12,6 +12,12 @@ const useTemperature = (city) => {
   const [isLoading, setIsloading] = React.useState(true);
   const [temp, setTemp] = React.useState(null);
 
+  // we useCallback here because we want to cache the formula calculation
+  const toCelcius = React.useCallback(
+    (kelvin) => Math.trunc(kelvin - 273.15),
+    []
+  );
+
   React.useEffect(() => {
     setIsloading(true);
     fetch(
@@ -21,7 +27,7 @@ const useTemperature = (city) => {
       }
     )
       .then((res) => res.json())
-      .then(({ main: { temp } }) => setTemp(temp));
+      .then(({ main: { temp } }) => setTemp(toCelcius(temp)));
   }, [city]);
 
   return [isLoading, temp];
