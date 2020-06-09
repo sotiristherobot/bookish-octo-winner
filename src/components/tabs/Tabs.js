@@ -6,6 +6,7 @@ import Button from "../Button";
 import Tab from "./Tab";
 import { default as TabBody } from "./Body";
 import useTemperature from "../../hooks/useTemperature";
+import TabsList from "./TabsList";
 
 const StyledTabs = styled.div`
   display: flex;
@@ -14,11 +15,6 @@ const StyledTabs = styled.div`
   max-width: 500px;
   border: 1px solid;
   min-height: 300px;
-
-  .headers {
-    display: flex;
-    flex-direction: row;
-  }
 `;
 
 /**
@@ -80,7 +76,7 @@ const Tabs = ({ children }) => {
 
   return (
     <StyledTabs>
-      <div className="headers">
+      <TabsList>
         {children.map((tab) => {
           const { id, tabName } = tab;
           return (
@@ -93,7 +89,7 @@ const Tabs = ({ children }) => {
             />
           );
         })}
-      </div>
+      </TabsList>
       <TabBody
         handleSubmit={handleSubmit}
         /* we use the render props technique here, because in a real world scenario,
