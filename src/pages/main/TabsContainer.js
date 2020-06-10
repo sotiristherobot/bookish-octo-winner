@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Input from "../Input";
-import Button from "../Button";
-import Tab from "./Tab";
-import { default as TabBody } from "./Body";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+import Tab from "../../components/tabs/Tab";
+import { default as TabBody } from "../../components/tabs/Body";
 import useTemperature from "../../hooks/useTemperature";
-import TabsList from "./TabsList";
+import TabsList from "../../components/tabs/TabsList";
 
 const StyledTabs = styled.div`
   display: flex;

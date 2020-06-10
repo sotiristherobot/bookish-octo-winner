@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import TabsContainer from "../../components/tabs/TabsContainer";
+import TabsContainer from "./TabsContainer";
 
 const StyledMain = styled.div`
   display: flex;

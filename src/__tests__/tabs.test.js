@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import TabsContainer from "../components/tabs/TabsContainer";
+import TabsContainer from "../pages/main/TabsContainer";
 
 /*
   By all means this is not an exhaustive list of tests. I'm only testing the basic functionality of
