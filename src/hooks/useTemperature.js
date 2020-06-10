@@ -27,7 +27,10 @@ const useTemperature = (city) => {
       method: "GET",
     })
       .then((res) => res.json())
-      .then(({ main: { temp } }) => setTemp(toCelcius(temp)))
+      .then(({ main: { temp } }) => {
+        setIsloading(false);
+        setTemp(toCelcius(temp));
+      })
       .catch((err) => console.error(err));
   }, [city]);
 
