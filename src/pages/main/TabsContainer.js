@@ -98,24 +98,34 @@ const TabsContainer = ({ children }) => {
           different content will be rendered based on the active tab id. In this case,
           since both tabs shared the same content, we re-use the same input for both components
         */
-        render={() => {
+        render={(tabs) => {
+          const tabToRender = tabs[activeTab];
           return (
             <>
-              {submittedValues[activeTab] ? (
-                "Waiting for other party to submit"
-              ) : (
-                <Input
-                  type="number"
-                  placeholder={children[activeTab].placeholder}
-                  handleInputChange={handleInputChange}
-                  value={inputsValue[activeTab]}
-                />
-              )}
+              {submittedValues[activeTab]
+                ? "Waiting for other party to submit"
+                : tabToRender}
               <Button disabled={Boolean(submittedValues[activeTab])} />
             </>
           );
         }}
-      />
+      >
+        {/* inputs are passed as children to body component. Then in the render function of the <TabBody/>
+         component the render function is called and the appropriate panel is rendered*/}
+        <Input
+          type="number"
+          placeholder={children[activeTab].placeholder}
+          handleInputChange={handleInputChange}
+          value={inputsValue[activeTab]}
+        />
+
+        <Input
+          type="number"
+          placeholder={children[activeTab].placeholder}
+          handleInputChange={handleInputChange}
+          value={inputsValue[activeTab]}
+        />
+      </TabBody>
     </StyledTabs>
   );
 };

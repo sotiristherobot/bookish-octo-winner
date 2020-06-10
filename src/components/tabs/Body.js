@@ -18,8 +18,8 @@ const StyledForm = styled.form`
  * @param {function} handleSubmit
  * @param {function} render
  */
-const Body = ({ handleSubmit, render }) => {
-  return <StyledForm onSubmit={handleSubmit}>{render()}</StyledForm>;
+const Body = ({ handleSubmit, render, children }) => {
+  return <StyledForm onSubmit={handleSubmit}>{render(children)}</StyledForm>;
 };
 export default Body;
 
